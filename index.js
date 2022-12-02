@@ -1,16 +1,12 @@
-var myFunction = (a,b) => {
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelectorAll('.nav__link')
 
-    if(a > b) {
-        console.log('A is bigger');
-    }
-else if (a<b){ 
- console.log('B is bigger');
-}
-else {
-    console.log('they are equal');
-}
-}
+navToggle.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+});
 
-
-myFunction(10,9);
-
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+    })
+})
